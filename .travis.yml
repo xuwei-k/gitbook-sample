@@ -25,7 +25,7 @@ after_success:
   - openssl aes-256-cbc -k "$SERVER_KEY" -in .travis/deploy_key.enc -d -a -out deploy.key
   - cp deploy.key ~/.ssh/
   - chmod 600 ~/.ssh/deploy.key
-  - mv gitbook/_book ../ && git clean -fdx && git checkout gh-pages && rm -rf ./* && cp -r ../_book/* ./ && git commit -a -m "auto commit on travis $TRAVIS_JOB_NUMBER" && '[ "$TRAVIS_BRANCH" == "master" ] && git push origin master'
+  - mv gitbook/_book ../ && git fetch --all && git clean -fdx && git checkout gh-pages && rm -rf ./* && cp -r ../_book/* ./ && git commit -a -m "auto commit on travis $TRAVIS_JOB_NUMBER" && '[ "$TRAVIS_BRANCH" == "master" ] && git push origin master'
 after_script:
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
