@@ -26,6 +26,8 @@ after_success:
   - openssl aes-256-cbc -k "$SERVER_KEY" -in .travis/deploy_key.enc -d -a -out deploy.key
   - cp deploy.key ~/.ssh/
   - chmod 600 ~/.ssh/deploy.key
+  - git config --global user.email "6b656e6a69@gmail.com"
+  - git config --global user.name "xuwei-k"
   - mv gitbook/_book ../ && git fetch origin gh-pages:gh-pages && git clean -fdx && git checkout gh-pages && rm -rf ./* && cp -r ../_book/* ./ && git commit -a -m "auto commit on travis $TRAVIS_JOB_NUMBER" && '[ "$TRAVIS_BRANCH" == "master" ] && git push origin master'
 after_script:
   - find $HOME/.sbt -name "*.lock" | xargs rm
