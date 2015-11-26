@@ -4,6 +4,10 @@ jdk:
   - oraclejdk8
 before_install:
   - npm install
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot
 addons:
   apt:
     sources:
@@ -22,3 +26,7 @@ after_success:
   - cp deploy.key ~/.ssh/
   - chmod 600 ~/.ssh/deploy.key
   - mv gitbook/_book ../ && git clean -fdx && git checkout gh-pages && rm -rf ./* && cp -r ../_book/* ./ && git commit -a -m "auto commit on travis $TRAVIS_JOB_NUMBER" && '[ "$TRAVIS_BRANCH" == "master" ] && git push origin master'
+after_script:
+  - find $HOME/.sbt -name "*.lock" | xargs rm
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+  - find $HOME/.ivy2/cache -name "*SNAPSHOT*" | xargs rm -rf
