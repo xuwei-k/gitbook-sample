@@ -2,7 +2,7 @@ language: scala
 jdk:
   - oraclejdk8
 before_install:
-  - sudo yum install gcc-c++
+  - sudo apt-get install gcc-c++
   - npm install
 script:
   - sbt build
