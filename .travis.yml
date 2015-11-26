@@ -13,3 +13,6 @@ addons:
     - g++-4.8
 script:
   - sbt build
+env:
+  global:
+    secure: l4Wcbvf33beinUG8E47Iu6Ab+bpmz6UbJcH4eHaD90kkwbhboyO6291E+a6fdII3wm4KSOpQGe2jD+qdDNGHeVgaSAtQVHmoEvP2nPXLNmxecrr0g/g+l3qe2m9T9e/LmhY/6ZssBPP5x9FduoxfbZbAX4ROXYEv6cM9U7n3G7y7Khh99yYjCWDDvLjAyLtWiqFd7i7Cy+slg/3/HCP0j2splGkc+ntrlXqgpzfF/KqfiX4FO1WVxYartL9/+sH2MVQrap7kSWJRAzDfMvv3bTX3ggDF8R4BXbbi4UrvjZ54QLgXIbnjdmhbc2UJvLiqQj2MgBoNlRrC5zHlTzFvQU/V90xqP5E/+aRIbt1MfbAxRLyB0cB2GswqaByQdlp/d1UafReDgAlO4iXe0WpcarrzCtsmMUMC0ZU8u67xW/VHnl+9olTTSkmzSwc1SVDuLFYlc1pSRBxwP/REU6Vu8oAsJBKYO1OmgVAsleSoStOzgyCHTwhrNMUCaCMA8/TIqKJ7V8iZ0U41Ntl6JAs01uuc8zs0ZMwxLnzaeZEpSz16PuZLcqAlg+5qF99oPLVMsKeQ2RkrlYiBhQqA7w1CEhn/WiqGHCZEdnr7qDi2eBp/xsEzdm7jdyK7cixdk0lgwYxEWOyDtIUW5iwhwDJO2HQKw9q+zYZ/9SlDRB+SCqA=
